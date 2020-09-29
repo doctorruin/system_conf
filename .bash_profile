@@ -1,3 +1,25 @@
+# This file overrides the .profile, so set standard stuff first before the fancy stuff
+
+# if running bash
+ if [ -n "$BASH_VERSION" ]; then
+	     # include .bashrc if it exists
+	         if [ -f "$HOME/.bashrc" ]; then
+			         . "$HOME/.bashrc"
+				     fi
+ fi
+
+ # set PATH so it includes user's private bin if it exists
+ if [ -d "$HOME/bin" ] ; then
+	     PATH="$HOME/bin:$PATH"
+ fi
+
+ # set PATH so it includes user's private bin if it exists
+ if [ -d "$HOME/.local/bin" ] ; then
+	     PATH="$HOME/.local/bin:$PATH"
+ fi
+
+ # below add the git info to bash
+
 parse_git_branch() {
 	     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      }
