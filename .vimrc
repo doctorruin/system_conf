@@ -1,6 +1,7 @@
 set nocompatible              " required
 filetype off                  " required
 
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -35,6 +36,34 @@ set foldlevel=99
 
 " Enable folding with the spacebar
 nnoremap <space> za
+
+" add line above and below using Enter and Shift+Enter
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
+" Vim5 and later versions support syntax highlighting. Uncommenting the next
+" line enables syntax highlighting by default.
+syntax on
+
+" If using a dark background within the editing area and syntax highlighting
+" turn on this option as well
+set background=dark
+
+" Uncomment the following to have Vim jump to the last position when
+"" reopening a file
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+
+" The following are commented out as they cause vim to behave a lot
+" differently from regular Vi. They are highly recommended though.
+set showcmd		" Show (partial) command in status line.
+set showmatch		" Show matching brackets.
+set ignorecase		" Do case insensitive matching
+set smartcase		" Do smart case matching
+set incsearch		" Incremental search
+set autowrite		" Automatically save before commands like :next and :make
+set hidden		" Hide buffers when they are abandoned
+set mouse-=a		" Enable mouse usage (all modes) reopening a file
 
 " SimpylFold
 Plugin 'tmhedberg/SimpylFold'
