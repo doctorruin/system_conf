@@ -54,9 +54,6 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 "
-" Git
-Plugin 'tpope/vim-fugitive'
-
 " SimpylFold
 Plugin 'tmhedberg/SimpylFold'
 
